@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content= width=240, height=320, user-scalable=yes, initial-scale=2.5, maximum-scale=5.0, minimun-scale=1.0>
+            <title>WkWebView与JS互调</title>
+    </head>
+    <body>
+        <button onclick="getImage()" style="height:50px;width:100px;"> JS调用OC </button>
+        <script type="text/javascript">
+            <!-- JS调用OC -->
+            function getImage() {
+                window.webkit.messageHandlers.myName.postMessage("JS调用OC");
+            }
+        </script>
+        <!-- OC调用JS -->
+        <script>
+            function payResult(str){
+                alert(str);
+            }
+        </script>
+    </body>
+</html>
